@@ -14,7 +14,6 @@ def index(request):
     context = {
         'title': title,
         'links_menu': links_menu,
-
     }
 
     return render(request, 'index.html', context)
@@ -23,7 +22,17 @@ def index(request):
 def about(request):
     title = "О нас"
 
-    context = {'title': title}
+    links_menu = [
+        {'link': 'index', 'name': 'HOME'},
+        {'link': 'products:index', 'name': 'PRODUCTS'},
+        {'link': 'about', 'name': 'ABOUT US'},
+        {'link': 'contacts', 'name': 'CONTACT US'}
+    ]
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
 
     return render(request, 'about.html', context)
 
@@ -31,7 +40,17 @@ def about(request):
 def contacts(request):
     title = "Контакты"
 
-    context = {'title': title}
+    links_menu = [
+        {'link': 'index', 'name': 'HOME'},
+        {'link': 'products:index', 'name': 'PRODUCTS'},
+        {'link': 'about', 'name': 'ABOUT US'},
+        {'link': 'contacts', 'name': 'CONTACT US'}
+    ]
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
 
     return render(request, 'contacts.html', context)
 
@@ -47,7 +66,17 @@ def product(request):
 def products(request):
     title = "Каталог продуктов"
 
-    context = {'title': title}
+    links_menu = [
+        {'link': 'index', 'name': 'HOME'},
+        {'link': 'products:index', 'name': 'PRODUCTS'},
+        {'link': 'about', 'name': 'ABOUT US'},
+        {'link': 'contacts', 'name': 'CONTACT US'}
+    ]
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
 
     return render(request, 'products.html', context)
 
