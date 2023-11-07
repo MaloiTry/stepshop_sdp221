@@ -19,7 +19,9 @@ def get_data(**kwargs):
 def index(request):
     title = "Главная"
 
-    context = get_data(title=title)
+    _products = Product.objects.all()
+
+    context = get_data(title=title, prods=_products)
 
     return render(request, 'index.html', context)
 

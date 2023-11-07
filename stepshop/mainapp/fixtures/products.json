@@ -1,0 +1,77 @@
+[
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "category": 3,
+      "name": "Джинсы",
+      "image": "product_images/Джинсы1.webp",
+      "short_desc": "Классные",
+      "description": "",
+      "price": "300.00",
+      "quantity": 8,
+      "created_at": "2023-10-31",
+      "updated_at": "2023-10-31"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "category": 4,
+      "name": "Голубая сумка",
+      "image": "product_images/Сумка1.jpg",
+      "short_desc": "Голуби",
+      "description": "",
+      "price": "10000.00",
+      "quantity": 10,
+      "created_at": "2023-10-31",
+      "updated_at": "2023-10-31"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "name": "Кеды",
+      "image": "product_images/Кеды1.jpg",
+      "short_desc": "Бешеные",
+      "description": "",
+      "price": "9000.00",
+      "quantity": 15,
+      "created_at": "2023-10-31",
+      "updated_at": "2023-10-31"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 4,
+    "fields": {
+      "category": 5,
+      "name": "Безрукавка",
+      "image": "product_images/Безрукавка1.jpg",
+      "short_desc": "Рукава нема",
+      "description": "",
+      "price": "6000.00",
+      "quantity": 20,
+      "created_at": "2023-10-31",
+      "updated_at": "2023-10-31"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 5,
+    "fields": {
+      "category": 2,
+      "name": "Кеды2",
+      "image": "",
+      "short_desc": "Супер",
+      "description": "",
+      "price": "2000.00",
+      "quantity": 12,
+      "created_at": "2023-10-31",
+      "updated_at": "2023-10-31"
+    }
+  }
+]
