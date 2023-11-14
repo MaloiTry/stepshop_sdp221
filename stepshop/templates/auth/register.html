@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="contact-page">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto col-3">
+                <form id="contact" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ register_form.as_p }}
+                    <button type="submit" class="btn btn-primary my-4">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

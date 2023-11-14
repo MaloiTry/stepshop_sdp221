@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
   <head>
 
@@ -37,19 +37,18 @@ https://www.tooplate.com/view/2114-pixie
         <div class="row">
           <div class="col-md-12">
             {% if user.is_authenticated %}
-
-            <span>{{ user.username }}</span><br>
-            <span>{{ user.first_name|title }} {{ user.last_name|title }}</span>
-            {# <span>{{ user.last_login|date:"d m Y" }}</span> #}
-
+            <span>
+              <a href="{% url 'auth:edit' %}" class="text-light">
+              {{ user.username }}</a>
+            </span> |
+            <span>
+              <a href="{% url 'auth:logout' %}" class="text-light">Выйти</a>
+            </span>
             {% else %}
-            <span>Гость</span>
+            <span>
+              <a href="{% url 'auth:login' %}" class="text-light">Войти</a>
+            </span>
             {% endif %}
-
-            {% for item in items %}
-              {{ item }}
-            {% endfor %}
-
           </div>
         </div>
       </div>
@@ -67,9 +66,7 @@ https://www.tooplate.com/view/2114-pixie
         <div class="row">
           <div class="col-md-12">
             <div class="copyright-text">
-              <p>Copyright &copy; 2023&ndash;{% now "Y" %} Bober Inc.
-                
-                - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+              <p>Copyright &copy; 2023&ndash;{% now "Y" %} Bober Inc.</p>
             </div>
           </div>
         </div>

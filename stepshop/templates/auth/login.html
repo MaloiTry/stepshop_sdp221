@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="contact-page">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto col-3">
+                <form id="contact" action="" method="post">
+                    {% csrf_token %}
+                    {{ login_form.as_p }}
+                    <button type="submit" class="btn btn-primary my-4">Войти</button>
+                </form>
+                <button class="btn btn-round form-control">
+                    <a href="{% url 'auth:register' %}">Зарегистрироваться</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
