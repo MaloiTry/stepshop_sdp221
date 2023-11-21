@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Product
+from django.shortcuts import render, get_object_or_404
+from .models import Product, Category
 
 
 def get_data(**kwargs):
@@ -9,8 +9,12 @@ def get_data(**kwargs):
         {'link': 'about', 'name': 'ABOUT US'},
         {'link': 'contacts', 'name': 'CONTACT US'}
     ]
+
+    categories = Category.objects.all()
+
     context = {
         'links_menu': links_menu,
+        'categories': categories,
     }
     context.update(**kwargs)
     return context
@@ -51,12 +55,19 @@ def product(request, pk):
     return render(request, 'product.html', context)
 
 
-def products(request):
+def products(request, pk=None):
     title = "Каталог продуктов"
 
-    _products = Product.objects.all()
+    # _products = Product.objects.all()
+    _products = Product.objects.order_by('price')
+    context = {}
 
-    context = get_data(title=title, prods=_products)
+    if pk is not None:
+        category = get_object_or_404(Category, pk=pk)
+        _products = Product.objects.filter(category__pk=pk).order_by('price')
+        context = get_data(category=category)
+
+    context = get_data(title=title, prods=_products, **context)
 
     return render(request, 'products.html', context)
 
