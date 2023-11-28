@@ -41,6 +41,11 @@
               <h6>{{ prod.price }}</h6>
               <p>{{ prod.description }}</p>
               <span>7 шт.</span>
+
+                <button class="btn btn-primary">
+                  <a href="{% url 'basket:add' prod.pk %}" class="text-light">Купить</a>
+                </button>
+
               <div class="down-content">
                 <div class="categories">
                   <h6>Категория: <span>
