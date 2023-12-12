@@ -9,3 +9,4 @@ urlpatterns = [
     path('add/<int:pk>/', basket_add, name='add'),
     path('remove/<int:pk>/', basket_remove, name='remove'),
 ]
+

@@ -10,6 +10,7 @@ from .forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditForm
 def login(request):
     title = 'Вход'
     login_form = ShopUserLoginForm(data=request.POST)
+    _next = request.GET.get('next') if 'next' in request.GET.keys() else ''
 
     if request.method == "POST" and login_form.is_valid():
         username = request.POST['username']
@@ -19,9 +20,11 @@ def login(request):
 
         if user and user.is_active:
             auth.login(request, user)
+            if 'next' in request.POST.keys():
+                return HttpResponseRedirect(request.POST['next'])
             return HttpResponseRedirect(reverse('index'))
 
-    context = get_data(title=title, login_form=login_form)
+    context = get_data(title=title, login_form=login_form, next=_next)
     # context = {
     #     'title': title,
     #     'login_form':  login_form,
