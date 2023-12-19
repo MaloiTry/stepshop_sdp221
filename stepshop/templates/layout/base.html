@@ -40,6 +40,12 @@ https://www.tooplate.com/view/2114-pixie
         <div class="row">
           <div class="col-md-12 blue-menu text-light">
 
+           {% if user.is_superuser %}
+            <span>
+              <a href="{% url 'admin_staff:users' %}" class="text-light">Админка</a>
+            </span> |
+            {% endif %}
+
             {% if user.is_authenticated %}
             <span>
               <a href="{% url 'auth:edit' %}" class="text-light">
